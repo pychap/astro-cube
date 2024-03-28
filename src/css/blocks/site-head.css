@@ -1,0 +1,11 @@
+.site-head {
+  padding: clamp(1.09rem,1rem + .47vw,1.33rem) 0;
+  background-color: tan;
+}
+
+.site-head__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}

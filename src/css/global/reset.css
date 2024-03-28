@@ -38,6 +38,7 @@ ol[role='list'] {
 body {
   min-height: 100vh;
   line-height: 1.5;
+  margin: 0;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -61,6 +62,7 @@ h4 {
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
+  text-decoration: none;
   text-decoration-skip-ink: auto;
   color: currentColor;
 }

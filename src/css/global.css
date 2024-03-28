@@ -26,7 +26,9 @@ Reference source: https://github.com/Set-Creative-Studio/cube-boilerplate/blob/m
 @import 'components/sidebar.css' layer(components);
 @import 'components/switcher.css' layer(components);
 @import 'components/wrapper.css' layer(components);
+@import 'components/nav.css' layer(components);
 @import 'utilities/region.css' layer(components);
 @import 'utilities/visually-hidden.css' layer(components);
+@import 'blocks/site-head.css' layer(components);
 
 @import 'tailwindcss/utilities';
