@@ -1,19 +1,17 @@
 ---
 import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
-import SiteHeader from "../components/SiteHeader.astro";
-const title = "CUBE CSS core setup";
+const title = "Peter Chapman's Website";
 const href = "/";
 ---
 
-<Layout title="Welcome to Astro.">
-  <SiteHeader />
+<Layout title={title}>
   <article class="wrapper flow">
-    <h1>CUBE CSS core setup</h1>
+    <h1 class="full-width">I'm Peter, a Web Developer and I Build Websites</h1>
     <div class="switcher">
       <div>
-        <h2 class="text-primary">A heading and paragraph in two columns</h2>
-        <p>This is a subhead or something very similar. It promises to rain today but hasn't started here in Spring Valley yet.</p>
+        <h2 class="text-primary">I can build yours, or reconfigure, or update, or add to.</h2>
+        <p>I have years of experience working with Websites.</p>
       </div>
       <div>
         <p>
@@ -32,3 +30,9 @@ const href = "/";
     </div>
   </article>
 </Layout>
+
+<style>
+  .full-width {
+    max-width: unset;
+  }
+</style>
