@@ -1,73 +1,98 @@
 /* @font-face here */
 .text-0 {
-  font-size: 0
+  font-size: 0;
 }
 
 .text-300 {
-  font-size: clamp(.7rem,.66rem + .2vw,.8rem)
+  font-size: clamp(0.7rem, 0.66rem + 0.2vw, 0.8rem);
 }
 
 .text-400 {
-  font-size: clamp(.88rem,.83rem + .24vw,1rem)
+  font-size: clamp(0.88rem, 0.83rem + 0.24vw, 1rem);
 }
 
 .text-500 {
-  font-size: clamp(1.09rem,1rem + .47vw,1.33rem)
+  font-size: clamp(1.09rem, 1rem + 0.47vw, 1.33rem);
 }
 
 .text-600 {
-  font-size: clamp(1.37rem,1.21rem + .8vw,1.78rem)
+  font-size: clamp(1.37rem, 1.21rem + 0.8vw, 1.78rem);
 }
 
 .text-700 {
-  font-size: clamp(1.71rem,1.45rem + 1.29vw,2.37rem)
+  font-size: clamp(1.71rem, 1.45rem + 1.29vw, 2.37rem);
 }
 
 .text-800 {
-  font-size: clamp(2.14rem,1.74rem + 1.99vw,3.16rem)
+  font-size: clamp(2.14rem, 1.74rem + 1.99vw, 3.16rem);
 }
 
 .text-900 {
-  font-size: clamp(2.67rem,2.07rem + 3vw,4.21rem)
+  font-size: clamp(2.67rem, 2.07rem + 3vw, 4.21rem);
 }
 
 .text-1000 {
-  font-size: clamp(3.34rem,2.45rem + 4.43vw,5.61rem)
+  font-size: clamp(3.34rem, 2.45rem + 4.43vw, 5.61rem);
 }
 
 .weight-regular {
-  font-weight: 400
+  font-weight: 400;
 }
 
 .weight-medium {
-  font-weight: 500
+  font-weight: 500;
 }
 
 .weight-bold {
-  font-weight: 700
+  font-weight: 700;
 }
 
-h1,h2 {
+h1,
+h2 {
   line-height: 1;
-  font-family: notulen_serif_displayXBd,serif;
+  font-family: notulen_serif_displayXBd, serif;
 }
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
   font-variant-ligatures: none;
 }
 
 h1 {
-  font-size: clamp(2.67rem,2.07rem + 3vw,4.21rem);
-  max-width: 22ch
+  font-size: clamp(2.67rem, 2.07rem + 3vw, 4.21rem);
+  max-width: 22ch;
 }
 
 h2 {
-  font-size: clamp(2.14rem,1.74rem + 1.99vw,3.16rem);
-  max-width: 30ch
+  font-size: clamp(2.14rem, 1.74rem + 1.99vw, 3.16rem);
+  max-width: 30ch;
+  font-family: "Lato", sans-serif;
+  /* font-weight: 300; */
 }
 
 h3 {
-  font-size: clamp(1.37rem,1.21rem + .8vw,1.78rem);
+  font-size: clamp(1.37rem, 1.21rem + 0.8vw, 1.78rem);
   line-height: 1.2;
-  max-width: 40ch
+  max-width: 40ch;
 }
+
+p {
+  font-size: var(--size-step-1);
+  font-weight: 400;
+}
+
+p {
+  font-family: "EB Garamond",serif;
+}
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 400 to 800
+
+.eb-garamond-<uniquifier> {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+

@@ -1,24 +1,13 @@
 ---
 import Card from "../components/Card.astro";
-import PrimaryNavigation from "../components/PrimaryNavigation.astro";
 import Layout from "../layouts/Layout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
 const title = "CUBE CSS core setup";
 const href = "/";
 ---
 
 <Layout title="Welcome to Astro.">
-  <header role="banner" class="[ site-head ] [ bg-tertiary-glare ]">
-    <div class="wrapper">
-      <div class="site-head__inner">
-        <h1 class="visually-hidden">Account overview</h1>
-        <PrimaryNavigation
-        <div class="user">
-          <a href="#">My profile</a>
-          <img src="/images/profile-image.jpg" width="50" height="50" alt="Profile image for Lorem Ipsum" />
-        </div>
-      </div>
-    </div>
-  </header>
+  <SiteHeader />
   <article class="wrapper flow">
     <h1>CUBE CSS core setup</h1>
     <div class="switcher">
