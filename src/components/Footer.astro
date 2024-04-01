@@ -4,7 +4,29 @@ const today = new Date();
 <footer class="site-foot region ta-center">
   <div class="wrapper flow">
     <div class="flow-space-700">
-      footer
+      <ul class="">
+        <li>
+            <a href="/" class={Astro.url.pathname.split("/")[1] === ""
+        ? "active footer-link"
+        : "footer-link"}>Home</a>
+    </li>
+    <li>
+        <a href="/about/" class={Astro.url.pathname.split("/")[1] === "about"
+        ? "active footer-link"
+        : "footer-link"}>About</a>
+    </li>
+    <li>
+        <a href="/blog/" class={Astro.url.pathname.split("/")[1] === "blog"
+        ? "active footer-link"
+        : "footer-link"}>Blog</a>
+    </li>
+    <li>
+        <a href="/contact/" class={Astro.url.pathname.split("/")[1] === "contact"
+        ? "active footer-link"
+        : "footer-link"}>Contact</a>
+    </li>
+  </ul>
+      <p class="">© {today.getFullYear()} PY&E Inc.<sup>™</sup>. All Rights Reserved.</p>
     </div>
   </div>
 </footer>
