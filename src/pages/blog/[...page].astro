@@ -1,0 +1,59 @@
+---
+import type { GetStaticPaths } from "astro";
+// Astro assets
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+// components
+import PostCard from "@ui/PostCard.astro";
+import Layout from "@/layouts/Layout.astro";
+
+import me from "@/assets/avatar.jpg";
+import Link from "@ui/Link.astro";
+
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allPosts = await getCollection("posts", ({ data }) => !data.isDraft);
+  // most recent is sorted first
+  return paginate(allPosts.sort((a, b) => new Date(b.data.pubDate).getUTCDate() - new Date(a.data.pubDate).getUTCDate()
+  ), 
+  { pageSize: 2 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<Layout title=`Bloggy Thoughts | Page ${page.currentPage}`>
+  <article class="wrapper flow">
+    <h1 class="full-width">
+     Blog
+    </h1>
+    <div class="switcher">
+      <div>
+        <h2 class="text-primary">
+          Blog.
+        </h2>
+        <p>Page {page.currentPage}</p>
+        <Image src={me} width={140} format="avif" alt="Profile image for Peter Chapman" />
+      </div>
+      <div>
+        <h3>Add something interesting to this subhead.</h3>
+        {
+          page.data.map((post) => (
+            <PostCard post={post} />
+          ))
+        }
+      </div>
+      <div class="pagination">
+        {
+        page.url.prev && 
+          <Link href={page.url.prev} variant="badge">Previous</Link>
+        }
+        {
+        page.url.next && 
+          <Link href={page.url.next} variant="badge">Next</Link>
+        }
+      </div>
+    </div>
+  </article>
+</Layout>
