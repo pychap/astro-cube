@@ -39,3 +39,8 @@ body {
   font-family:;
   overflow-x: hidden;
 }
+
+a {
+  color: currentColor;
+  text-underline-offset: 3px;
+}

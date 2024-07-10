@@ -1,0 +1,49 @@
+---
+import FormattedDate from "@/components/ui/FormattedDate.astro";
+import Heading from "@/components/ui/Heading.astro";
+import Layout from "@/layouts/Layout.astro";
+import type { GetStaticPaths } from "astro";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import me from "@/assets/avatar.jpg";
+import Image from "astro/components/Image.astro";
+
+export const getStaticPaths = (async () => {
+  const allPosts = await getCollection("posts", ({ data }) => !data.isDraft);
+  return allPosts.map((p) => ({
+    params: { 
+      slug: p.slug,
+    },
+    props: {
+      post: p,
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+type Props = {
+  post: CollectionEntry<'posts'>;
+}
+const { post } = Astro.props;
+const { Content } = await post.render();
+const { title, description, image, pubDate } = post.data;
+---
+
+<Layout title={title} description={description}>
+  <section class="post-metadata">
+    <header>
+      <FormattedDate pubDate={pubDate} />
+      <Heading tagName="h1" size="h2">{title}</Heading>
+      <p>{description}</p>
+    </header>
+  </section>
+  <section class="post-content">
+    <Content />
+  </section>
+  <section class="author-metadata" aria-label="Author Metadata">
+    <div>
+      <Image src={me} width={140} height={140} format="avif" alt="Profile image for Peter Chapman" />
+      <Heading tagName="h2" size="h3">About me ›</Heading>
+      <p>I am a web developer with years of experience in Frontend development.</p>
+    </div>
+  </section>
+</Layout>
