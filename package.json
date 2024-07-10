@@ -12,12 +12,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.7",
-    "@astrojs/netlify": "^5.2.0",
-    "@astrojs/partytown": "^2.0.4",
-    "@astrojs/sitemap": "^3.1.2",
+    "@astrojs/check": "^0.8.1",
+    "@astrojs/netlify": "^5.4.0",
+    "@astrojs/partytown": "^2.1.1",
+    "@astrojs/sitemap": "^3.1.6",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.5.1",
+    "astro": "^4.11.5",
     "astro-google-fonts-optimizer": "^0.2.2",
     "astro-hover-prefetch": "^1.0.7",
     "slugify": "^1.6.6",
