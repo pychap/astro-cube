@@ -7,6 +7,10 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
+  prefetch: {
+    prefetchAll: true,
+  },
+  site: 'https://astro-cube-boilerplate.netlify.app',
   integrations: [tailwind({
     applyBaseStyles: false
   }), partytown(), sitemap()],
